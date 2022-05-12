@@ -29,5 +29,13 @@ namespace TeknolojiDükkanB.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult KategoriSil(int ID)
+        {
+
+            var kategory = c.Kategoriss.Find(ID);
+            c.Kategoriss.Remove(kategory);
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
