@@ -26,7 +26,8 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         [StringLength(150)]
         public string UrunGOrsel { get;set; }
         //bır urünün bir kategorisi olabliir
-        public Kategori Kategori { get; set; }
+        public int kategoriid { get; set; }
+        public virtual Kategori Kategori { get; set; }
         public ICollection<SatisHareket> satisHarekets { get; set; }
         //bır ürün birden fazla kez satışta bulunabilir
 

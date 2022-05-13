@@ -37,5 +37,17 @@ namespace TeknolojiDükkanB.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult KategoriGetir(int ID)
+        {
+            var kategori = c.Kategoriss.Find(ID);
+            return View("KategoriGetir",kategori);
+        }
+        public ActionResult KategoriGuncelleme(Kategori k)
+        {
+            var guncelle = c.Kategoriss.Find(k.KategoriId);
+            guncelle.KategoriAdi = k.KategoriAdi;
+            c.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

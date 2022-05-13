@@ -1,0 +1,47 @@
+﻿@using TeknolojiDükkanB.Models.Sınıflar
+@model List<Urun>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<br />
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>Urun</th>
+        <th>UrunMarka</th>
+        <th>Stok</th>
+        <th>Alış Fiyatı</th>
+        <th>Satış Fiyatı</th>
+        <th>Durum</th>
+        <th>Kategori</th>
+        <th>Görsel</th>
+        <th>Sil</th>
+        <th>Guncelle</th>
+    </tr>
+    @foreach(var u in Model)
+        {
+<tr>
+    <td>@u.UrunID</td>
+    <td>@u.UrunAdi</td>
+    <td>@u.UrunMarka</td>
+    <td>@u.Stok</td>
+    <td>@u.AlisFiyati</td>
+    <td>@u.SatisFiyati</td>
+    <td>@u.Durum</td>
+    <td>@u.Kategori.KategoriAdi</td>
+    <td>@u.UrunGOrsel</td>
+    <td>
+        <a href="/Urun/UrunSil/@u.UrunID" class="btn btn-danger">Sil</a>
+    </td>
+    <td>
+        <a href="/Urun/UrunGetir/@u.UrunID" class="btn btn-success">Guncelle</a>
+    </td>
+</tr>
+        }
+</table>
+<a href="/Urun/YeniUrun/" class="btn btn-info">Yeni Urun</a>
+
+
+
