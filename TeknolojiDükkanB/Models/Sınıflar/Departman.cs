@@ -14,6 +14,7 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         [Column(TypeName = "Varchar")]//veritabanında kısıtlamalar
         [StringLength(30)]
         public string DepartmanAdi { get; set; }
+        public bool Durum { get; set; }
         public ICollection<Personel> personels { get; set; }
 
     }

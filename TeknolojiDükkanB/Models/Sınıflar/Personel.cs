@@ -22,7 +22,8 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         public string PersonelGorsel { get; set; }
         public ICollection<SatisHareket> satisHarekets { get; set; }
         //her personel birden fazla satyış yapabilir
-        public Departman Departman { get; set; }
+        public int Departmanid { get; set; }
+        public virtual Departman Departman { get; set; }
 
     }
 }

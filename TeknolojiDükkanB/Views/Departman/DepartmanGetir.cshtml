@@ -1,0 +1,21 @@
+﻿@model TeknolojiDükkanB.Models.Sınıflar.Departman
+@{
+    ViewBag.Title = "DepartmanGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Departman Guncelle</h2>
+
+@using (Html.BeginForm("DepartmanGuncelle", "Departman", FormMethod.Post))
+{
+
+    <div class="form-group">
+        @Html.LabelFor(x => x.DepartmanAdi)
+        @Html.TextBoxFor(x =>x.DepartmanAdi, new { @class = "form-control" })
+        @Html.HiddenFor(x => x.DepartmanID)
+    </div>
+
+    <button class="btn btn-warning">Güncelle</button>
+
+
+}
