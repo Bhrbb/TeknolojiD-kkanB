@@ -1,0 +1,41 @@
+﻿@using TeknolojiDükkanB.Models.Sınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "MsteriSatis";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>MsteriSatis</h2>
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">
+        Cari Adı:
+        @ViewBag.cari
+    </li>
+</ol>
+<br />
+<table class="table table-condensed">
+    <tr>
+        <th>Satıs ID</th>
+        <th>Ürün</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Toplam(Kdv Dahil)</th>
+        <th>Tarih</th>
+        <th>Adet</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SatisID</td>
+            <td>@x.urun.UrunAdi</td>
+            <td>@x.personel.PersonelAd @x.personel.PersonelSoyad</td>
+            <td>@x.Fiyat</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarih.ToShortDateString()</td>
+            <td>@x.Adet</td>
+            <td><a href="#" class="btn btn-default" style="background-color:darkgoldenrod">Yazdır</a></td>
+        </tr>
+
+    }
+
+</table>

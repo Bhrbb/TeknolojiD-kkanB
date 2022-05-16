@@ -6,11 +6,12 @@
 }
 
 <h2>Departman Detay Sayfası</h2>
-
-<div style="background-color:lightgrey" >
-    dd
-</div>
 <br />
+<ol class="breadcrumb mb-4">
+    <li class="breadcrumb-item active">Departman Adı:
+    @ViewBag.d</li>
+</ol>
+
 <table class="table table-hover">
     <tr>
         <th>Personel Id</th>
@@ -26,7 +27,7 @@
         <td>@x.PersonelAd</td>
         <td>@x.PersonelSoyad</td>
         <td>@x.PersonelGorsel</td>
-        <td><a href="#" class="btn btn-default" style="background-color:crimson">Satışlar</a></td>
+        <td><a href="/Departman/DepartmanPersonelSatis/@x.PersonelID" class="btn btn-default" style="background-color:lightblue">Satışlar</a></td>
     </tr>
     }
 

@@ -15,9 +15,12 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         public decimal Fiyat { get; set; }
         public int Adet { get; set; }
         public decimal ToplamTutar { get; set; }
-        public Urun urun { get; set; }
-        public Cariler cariler { get; set; }
-        public Personel personel { get; set; }
+        public int UrunID { get; set; }
+        public virtual Urun urun { get; set; }
+        public int CariID { get;set; }
+        public  virtual Cariler cariler { get; set; }
+        public int personelID { get; set; }
+        public virtual  Personel personel { get; set; }
        
     }
 }

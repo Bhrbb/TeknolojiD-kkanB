@@ -24,6 +24,7 @@ namespace TeknolojiDükkanB.Controllers
         [HttpPost]
         public ActionResult Yeni(Departman d)
         {
+            d.Durum = true;
             c.Departmanss.Add(d);
             c.SaveChanges();
             return RedirectToAction("Index");
@@ -52,7 +53,16 @@ namespace TeknolojiDükkanB.Controllers
         public ActionResult DepartmanDetay(int id)
         {
             var personel = c.Personelss.Where(x => x.Departmanid == id).ToList();
+            var depdt = c.Departmanss.Where(x => x.DepartmanID == id).Select(y => y.DepartmanAdi).FirstOrDefault();
+            ViewBag.d = depdt;
             return View(personel);
         }
+       public ActionResult DepartmanPersonelSatis(int id)
+       {
+            var degerler = c.Satishareketss.Where(x => x.personelID == id).ToList();
+            var per = c.Personelss.Where(x => x.PersonelID == id).Select(y => y.PersonelAd + " " + y.PersonelSoyad).FirstOrDefault();
+            ViewBag.dpers = per;
+            return View(degerler);
+       }
     }
 }

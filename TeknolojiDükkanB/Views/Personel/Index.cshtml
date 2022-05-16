@@ -1,0 +1,35 @@
+﻿@using TeknolojiDükkanB.Models.Sınıflar
+@model List<Personel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Personel Sayfası</h2>
+
+<table class=" table table-hover">
+    <tr>
+        <th>Personel Id</th>
+        <th>Personel Adı</th>
+        <th>Personel Soyadı</th>
+        <th>Personel Gorsel</th>
+        <th>Personel Departmanı</th>
+        <th>Güncelle</th>
+        <th>Satışlar</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.PersonelID</td>
+            <td>@x.PersonelAd</td>
+            <td>@x.PersonelSoyad</td>
+            <td>@x.PersonelGorsel</td>
+            <td>@x.Departman.DepartmanAdi</td>
+            <td><a href="/Personel/PersonelGetir/@x.PersonelID" class="btn btn-default" style="background-color:lightcoral">Guncelle</a></td>
+            <td><a href="/Personel/PersonelDetay/" class="btn btn-dark">Detaylar</a></td>
+
+        </tr>
+
+     }
+</table>
+<a href="/Personel/YeniPersonel" class="btn btn-info">Personel Ekle </a>
