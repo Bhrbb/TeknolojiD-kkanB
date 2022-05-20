@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<TeknolojiDükkanB.Models.Sınıflar.SinifGrup2>
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Departman Tablosu </h3>
+
+        <div class="card-tools">
+
+        </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 10px">Sıra Numarası</th>
+                    <th>Departmanlar</th>
+                    <th>Progress</th>
+                    <th style="width: 40px">Sayı</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{ int sirano = 0;}
+                @foreach (var x in Model)
+                {
+
+
+                    <tr>
+                        <td>@{sirano++;}@sirano</td>
+                        <td>@x.Departman</td>
+                        <td>
+                            <div class="progress progress-xs">
+                                <div class="progress-bar progress-bar-danger" style="width:55%"></div>
+                            </div>
+                        </td>
+                        <td><span class="badge bg-danger">@x.Sayi</span></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+                    

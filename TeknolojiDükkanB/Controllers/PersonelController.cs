@@ -32,8 +32,7 @@ namespace TeknolojiDükkanB.Controllers
         [HttpPost]
         public ActionResult YeniPersonel(Personel p)
         {
-            var personel = c.Personelss.Add(p);
-           
+             c.Personelss.Add(p);
             c.SaveChanges();
             return RedirectToAction("Index");   
 
@@ -53,10 +52,17 @@ namespace TeknolojiDükkanB.Controllers
            
 
         }
-        //public ActionResult PersonelGuncelle(Personel p)
-        //{
-        //    var personel=c.Personelss.Find(personel.PersonelID)
+        public ActionResult PersonelGuncelle(Personel p)
+        {
+            var personel = c.Personelss.Find(p.PersonelID);
+            personel.PersonelAd = p.PersonelAd;
+            personel.PersonelSoyad = p.PersonelSoyad;
+            personel.Departmanid = p.Departmanid;
+            personel.PersonelGorsel=p.PersonelGorsel;
+            c.SaveChanges();
+            return RedirectToAction("Index");
 
-        //}
+        }
+
     }
 }

@@ -1,0 +1,48 @@
+﻿@using TeknolojiDükkanB.Models.Sınıflar
+@model List<Faturalar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Index</h2>
+<table id="tbl1" class=" table table-bordered" style="margin-top:20px">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Seri No</th>
+            <th>Sıra No</th>
+            <th>Vergi Dairesi</th>
+            <th>Teslim Eden </th>
+            <th>Teslim Alan </th>
+            <th>Tarih</th>
+            <th>Saat</th>
+            <th>Toplam</th>
+            <th>Guncelle</th>
+            <th>Detaylar</th>
+        </tr>
+    </thead>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.FaturaID</td>
+            <td>@k.FaturaSeriNo</td>
+            <td>@k.FaturaSıraNo</td>
+            <td>@k.VergiDairesi</td>
+            <td>@k.TeslimEden</td>
+            <td>@k.TeslimAlan</td>
+            <td>@k.Tarih.ToShortDateString()</td>
+            <td>@k.Saat</td>
+            <td>100</td>
+
+            <td><a href="/Fatura/FaturaGetir/@k.FaturaID" class="btn btn-default" style="background-color:chocolate">Guncelle</a></td>
+            <td><a href="/Fatura/FaturaDetay/@k.FaturaID" class="btn btn-default" style="background-color:lightpink">Detaylar</a></td>
+            
+        </tr>
+
+    }
+
+</table>
+<a href="/Fatura/YeniFatura" class="btn btn-default" style="background-color:lemonchiffon">Yeni Fatura Girişi</a>
+
+

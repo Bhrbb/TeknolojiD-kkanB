@@ -6,7 +6,7 @@
 
 <h2>YeniPersonel</h2>
 
-<form class="form-group">
+<form class="form-group" method="post">
     @Html.LabelFor(x => x.PersonelAd)
     @Html.TextBoxFor(x => x.PersonelAd, new { @class = "form-control" })
     <br />
@@ -22,8 +22,6 @@
 
 
     <button class="btn btn-secondary">Kaydet</button>
-
-
 
 </form>
 

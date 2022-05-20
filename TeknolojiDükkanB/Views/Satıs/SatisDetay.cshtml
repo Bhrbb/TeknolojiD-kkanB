@@ -1,0 +1,39 @@
+﻿@using TeknolojiDükkanB.Models.Sınıflar
+@model List<SatisHareket>
+@{
+    ViewBag.Title = "SatisDetay";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<h2>Satis Detay Sayfası </h2>
+<br />
+
+<table class="table table-condensed">
+    <tr>
+        <th>Satıs ID</th>
+        <th>Ürün</th>
+        <th>Cari</th>
+        <th>Personel</th>
+        <th>Fiyat</th>
+        <th>Toplam</th>
+        <th>Tarih</th>
+        <th>Adet</th>
+    </tr>
+    @foreach (var x in Model)
+    {
+        <tr>
+            <td>@x.SatisID</td>
+            <td>@x.urun.UrunAdi</td>
+            <td>@x.cariler.CariAd @x.cariler.CariSoyad</td>
+            <td>@x.personel.PersonelAd @x.personel.PersonelSoyad</td>
+            <td>@x.Fiyat</td>
+            <td>@x.ToplamTutar</td>
+            <td>@x.Tarih.ToShortDateString()</td>
+            <td>@x.Adet</td>
+
+        </tr>
+
+    }
+
+</table>
+

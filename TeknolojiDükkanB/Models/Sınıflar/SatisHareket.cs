@@ -11,6 +11,7 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         [Key]
         public int SatisID { get; set; }
         //urun,cari,personel
+
         public DateTime Tarih { get; set; }
         public decimal Fiyat { get; set; }
         public int Adet { get; set; }

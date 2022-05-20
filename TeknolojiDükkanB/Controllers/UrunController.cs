@@ -68,5 +68,10 @@ namespace TeknolojiDükkanB.Controllers
             c.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult UrunListesi()
+        {
+            var degerler = c.Urunss.ToList();
+            return View(degerler);
+        }
     }
 }

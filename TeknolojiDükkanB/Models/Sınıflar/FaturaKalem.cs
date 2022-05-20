@@ -18,7 +18,8 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         public decimal BirimFİyat { get; set; }
         public decimal Tutar { get; set; }
         //bır fatura kalemının bır 
-        public Faturalar Faturalars { get; set; }
+        public int FaturaID { get; set; }
+        public virtual Faturalar Faturalars { get; set; }
 
     }
 }

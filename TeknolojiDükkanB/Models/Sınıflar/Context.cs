@@ -18,6 +18,7 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         public DbSet<Personel> Personelss { get; set; }
         public DbSet<SatisHareket> Satishareketss { get; set; }
         public DbSet<Urun> Urunss { get; set; }
+        public DbSet<Detay> Detays { get; set; }
 
 
 
