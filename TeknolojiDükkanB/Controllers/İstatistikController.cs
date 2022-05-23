@@ -84,7 +84,27 @@ namespace TeknolojiDükkanB.Controllers
             return PartialView(sorgu2.ToList());
 
         }
-    
+        public PartialViewResult Partial2()
+        {
+            var sorgu = c.Carilerss.ToList();
+            return PartialView(sorgu);
+        }
+        public PartialViewResult Partial3()
+        {
+            var sorgu =c.Urunss.ToList();
+            return PartialView(sorgu);
+        }
+        public PartialViewResult Partial4()
+        {
+            var sorgu3 = from x in c.Urunss
+                         group x by x.UrunMarka into g
+                         select new SınıfGrup3
+                         {
+                             marka=g.Key,
+                             sayi=g.Count()
+                         };
+            return PartialView(sorgu3.ToList());
+        }
    
     }
 }
