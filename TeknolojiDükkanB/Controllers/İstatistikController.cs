@@ -75,7 +75,7 @@ namespace TeknolojiDükkanB.Controllers
         public PartialViewResult Partial1()
         {
             var sorgu2 = from x in c.Personelss
-                          group x by x.Departmanid into g
+                          group x by x.Departman.DepartmanAdi into g
                           select new SinifGrup2
                           {
                               Departman = g.Key,

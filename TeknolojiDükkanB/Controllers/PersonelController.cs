@@ -63,6 +63,10 @@ namespace TeknolojiDükkanB.Controllers
             return RedirectToAction("Index");
 
         }
-
+        public ActionResult Personelliste()
+        {
+            var sorgu = c.Personelss.ToList();
+            return View(sorgu);
+        }
     }
 }
