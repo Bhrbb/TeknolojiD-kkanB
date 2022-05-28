@@ -27,11 +27,11 @@
     @foreach (var x in Model)
     {
         <tr>
-            <td>@x.SatisID</td>
+            
             <td>@x.urun.UrunAdi</td>
             <td>@x.cariler.CariAd @x.cariler.CariSoyad</td>
-            <td>@x.Fiyat</td>
-            <td>@x.ToplamTutar</td>
+            <td>@x.Fiyat ₺</td>
+            <td>@x.ToplamTutar ₺</td>
             <td>@x.Tarih.ToShortDateString()</td>
             <td>@x.Adet</td>
             <td><a href="/Departman/yazdır/@x.SatisID/" class="btn btn-default" style="background-color:darkgoldenrod">Yazdır</a></td>

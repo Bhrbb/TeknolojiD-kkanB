@@ -36,7 +36,7 @@ namespace TeknolojiDükkanB.Controllers
             var deger14 = c.Satishareketss.Sum(x => x.ToplamTutar).ToString();
             ViewBag.d14 = deger14;
             DateTime bugun = DateTime.Now;
-            var shortdate = Convert.ToDateTime(bugun.ToShortDateString());
+            //var shortdate = Convert.ToDateTime(bugun.ToShortDateString());
             var deger15 = c.Satishareketss.Count(x => x.Tarih == bugun).ToString();
             ViewBag.d15 = deger15;
             var deger16 = c.Satishareketss.Where(x => x.Tarih == bugun).Sum(y => (decimal?)y.ToplamTutar).ToString();

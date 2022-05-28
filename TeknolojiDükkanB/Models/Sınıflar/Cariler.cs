@@ -24,6 +24,9 @@ namespace TeknolojiDükkanB.Models.Sınıflar
         [Column(TypeName = "Varchar")]//veritabanında kısıtlamalar
         [StringLength(50)]
         public string CariMail { get; set; }
+        [Column(TypeName ="Varchar")]
+        [StringLength(6)]
+        public string Sifre { get; set; }
         public bool Durum { get; set; }
         public ICollection<SatisHareket> satisHarekets { get; set; }
     }

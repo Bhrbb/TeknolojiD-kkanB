@@ -45,8 +45,8 @@ namespace TeknolojiDükkanB.Controllers
         [HttpPost]
         public ActionResult YeniSatis(SatisHareket satis)
         {
-            satis.Tarih=DateTime.Parse(DateTime.Now.ToShortDateString());
-         // satis.Tarih=DateTime.Now;
+           // satis.Tarih=DateTime.Parse(DateTime.Now.ToShortDateString());
+          satis.Tarih=DateTime.Now;
             c.Satishareketss.Add(satis);
             c.SaveChanges();
             return RedirectToAction("Index");

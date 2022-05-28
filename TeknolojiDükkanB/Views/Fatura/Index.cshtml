@@ -9,9 +9,9 @@
 <table id="tbl1" class=" table table-bordered" style="margin-top:20px">
     <thead>
         <tr>
-            <th>ID</th>
-            <th>Seri No</th>
-            <th>Sıra No</th>
+           
+            <th>Seri Sıra No</th>
+          
             <th>Vergi Dairesi</th>
             <th>Teslim Eden </th>
             <th>Teslim Alan </th>
@@ -25,16 +25,14 @@
     @foreach (var k in Model)
     {
         <tr>
-            <td>@k.FaturaID</td>
-            <td>@k.FaturaSeriNo</td>
-            <td>@k.FaturaSıraNo</td>
+           
+            <td>@k.FaturaSeriNo @k.FaturaSıraNo</td>
             <td>@k.VergiDairesi</td>
             <td>@k.TeslimEden</td>
             <td>@k.TeslimAlan</td>
             <td>@k.Tarih.ToShortDateString()</td>
             <td>@k.Saat</td>
-            <td>100</td>
-
+            <td>@k.Toplam</td>
             <td><a href="/Fatura/FaturaGetir/@k.FaturaID" class="btn btn-default" style="background-color:chocolate">Guncelle</a></td>
             <td><a href="/Fatura/FaturaDetay/@k.FaturaID" class="btn btn-default" style="background-color:lightpink">Detaylar</a></td>
             

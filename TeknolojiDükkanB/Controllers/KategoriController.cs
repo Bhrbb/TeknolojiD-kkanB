@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using TeknolojiDükkanB.Models.Sınıflar;
+using PagedList;
+using PagedList.Mvc;
 
 namespace TeknolojiDükkanB.Controllers
 {
@@ -12,9 +14,9 @@ namespace TeknolojiDükkanB.Controllers
         // GET: Kategori
         Context c= new Context();
 
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            var degerler=c.Kategoriss.ToList();
+            var degerler=c.Kategoriss.ToList().ToPagedList(sayfa,12);
             return View(degerler);
         }
         [HttpGet]

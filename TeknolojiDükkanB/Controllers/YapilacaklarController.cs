@@ -21,7 +21,8 @@ namespace TeknolojiDükkanB.Controllers
             ViewBag.d3=deger3;
             var deger4 = (from x in c.Carilerss select x.CariSehir).Distinct().Count().ToString();
             ViewBag.d4=deger4;
-            return View();
+            var yapilacak = c.Yapilacaks.ToList();
+            return View(yapilacak);
         }
     }
 }
